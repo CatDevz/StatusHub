@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  database:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=cody
+      - POSTGRES_PASSWORD=aapple123
+      - POSTGRES_DB=statushub
+    volumes:
+      - /srv/statushub/database/:/var/lib/postgresql/data
+    ports: ["5432:5432"]
